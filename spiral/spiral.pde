@@ -32,7 +32,7 @@ void draw() {
     if (angleNumber == 0) {
       setAngle = 1*baseAngle; // PI/4
     }
-    if (angleNumber == 1) {
+    if (angleNumber == 1) { 
       setAngle = 3*baseAngle; // 3*PI/4
     }
     if (angleNumber == 2) {
