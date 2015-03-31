@@ -16,7 +16,7 @@ int spiralElementsClockwise;
 int j = 1;
 int arcCentreX, arcCentreY;
 float startArc, stopArc;
-
+ 
 void setup() {
   size(1000, 800);
   background(255);
