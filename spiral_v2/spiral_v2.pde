@@ -31,61 +31,62 @@ void setup() {
 void draw() {
   while (counter < 1) {
   // First, draw a clockwise spiral.
-  for (int i = 0; i < 15; i++) {
-      // First, remember what the last side was before we update it:
-      lastSide = side;
-      // Then, update the side length with the next fibonacci number:
-      side = fib(i);
-      float radius = sqrt(side*side);
-      println("lastSide = " + lastSide);
-      println("side = " + side);
-      println("--");
-      if (i%4 == 0) { 
-          originX += lastSide;
-          originY = originY - (side - lastSide);
-          arcCentreX = originX;
-          arcCentreY = originY;
-          startArc = 0;
-          stopArc = PI - HALF_PI;
-          //startArc = PI + HALF_PI;
-          //stopArc = TWO_PI;
-          stroke(0, 0, colour);
-      } else if (i%4 == 1) { 
-          originX = originX - (side - lastSide);
-          originY = originY - side;
-          arcCentreX = originX;
-          arcCentreY = originY + side;
-          startArc = PI+HALF_PI;
-          stopArc = TWO_PI;
-          //startArc = 0;
-          //stopArc = HALF_PI;
-          stroke(colour, 0, 0);
-      } else if (i%4 == 2) {
-          originX -= side;
-          originY = originY; // originY unchanged
-          arcCentreX = originX + side;
-          arcCentreY = originY + side;
-          startArc = PI;
-          stopArc = PI + HALF_PI;
-          //startArc = HALF_PI;
-          //stopArc = PI;
-          stroke(0, colour, 0);
-    } else if (i%4 == 3) {
-          originX = originX;
-          originY += lastSide;
-          arcCentreX = originX + side;
-          arcCentreY = originY;
-          startArc = HALF_PI;
-          stopArc = PI;
-          //startArc = PI;
-          //stopArc = PI + HALF_PI;
-          stroke(0);
-      }
-        
-      noFill();
-      //rect(originX, originY, side, side);
-      arc(arcCentreX, arcCentreY, 2*side, 2*side, startArc, stopArc);
+    for (int i = 0; i < 17; i++) {
+        // First, remember what the last side was before we update it:
+        lastSide = side;
+        // Then, update the side length with the next fibonacci number:
+        side = fib(i);
+        float radius = sqrt(side*side);
+        println("lastSide = " + lastSide);
+        println("side = " + side);
+        println("--");
+        if (i%4 == 0) { 
+            originX += lastSide;
+            originY = originY - (side - lastSide);
+            arcCentreX = originX;
+            arcCentreY = originY;
+            startArc = 0;
+            stopArc = PI - HALF_PI;
+            //startArc = PI + HALF_PI;
+            //stopArc = TWO_PI;
+            stroke(0, 0, colour);
+        } else if (i%4 == 1) { 
+            originX = originX - (side - lastSide);
+            originY = originY - side;
+            arcCentreX = originX;
+            arcCentreY = originY + side;
+            startArc = PI+HALF_PI;
+            stopArc = TWO_PI;
+            //startArc = 0;
+            //stopArc = HALF_PI;
+            stroke(colour, 0, 0);
+        } else if (i%4 == 2) {
+            originX -= side;
+            originY = originY; // originY unchanged
+            arcCentreX = originX + side;
+            arcCentreY = originY + side;
+            startArc = PI;
+            stopArc = PI + HALF_PI;
+            //startArc = HALF_PI;
+            //stopArc = PI;
+            stroke(0, colour, 0);
+      } else if (i%4 == 3) {
+            originX = originX;
+            originY += lastSide;
+            arcCentreX = originX + side;
+            arcCentreY = originY;
+            startArc = HALF_PI;
+            stopArc = PI;
+            //startArc = PI;
+            //stopArc = PI + HALF_PI;
+            stroke(0);
+        }
+          
+        noFill();
+        //rect(originX, originY, side, side);
+        arc(arcCentreX, arcCentreY, 2*side, 2*side, startArc, stopArc); 
     }// end inner for loop, i
+
     counter++;
   } // end while loop that controls the number of times we execute the spiral
 }
