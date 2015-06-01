@@ -31,7 +31,7 @@ void setup() {
 }
 
 void draw() {
-  int totalRotations = 5;
+  int totalRotations = 8;
  translate(500,400);
   while (counter < 1) {
   // First, draw a clockwise spiral.
@@ -43,7 +43,7 @@ void draw() {
    }
    popMatrix();
    scale(-1, 1);
-   int moreRotations = 8;
+   int moreRotations = 13;
    for (int k=0; k<moreRotations; k++){
      rotate(2*PI*(float)1/moreRotations);
     drawSpiralArm();
